@@ -1,35 +1,27 @@
 <template>
   <div>
-    <div class="align-center">
-      <h1>{{ titulo }}</h1>
-    </div>
-    <div>
-      <ul>
-        <li v-for="name in names">
-          {{ names }}
-        </li>
-      </ul>
-    </div>
+    <Header :title="titleText" :subtitle="subtitleText"/>
   </div>
 </template>
 
 <script>
+import Header from "./components/header.vue";
 export default {
 
   data() {
     return {
-      titulo: 'POKEMONS',
+      titleText: 'Pokesearch',
+      subtitleText: 'Search for your favorite pokemon',
       names: []
     }
-  }, 
+  },
 
-  created() {
-    this.$http.get('https://pokeapi.co/api/v2/pokemon/')
-      .then(res => res.json())
-      .then(name => this.names = name);
-  }
+  components: {
+    Header
+  },
 }
 </script>
 
 <style>
+
 </style>
