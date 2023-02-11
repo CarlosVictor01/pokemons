@@ -7,7 +7,7 @@
                 type="text"
                 v-model="pokemoName"
             />
-            <Button :btnText="btnText"/>
+            <Button :btnText="btnText" type="submit"/>
         </form>
     </section>
 </template>
@@ -26,6 +26,13 @@ export default {
 
     components: {
         Button
+    }, 
+
+    methods: {
+        onSubmit(e) {
+            e.preventDefault();
+            this.$emit("search_pokemoName", this.pokemoName);
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <button class="btn">
+    <button @click="onClick()" class="btn">
         {{ btnText }}
     </button>
 </template>
@@ -10,6 +10,12 @@ export default {
     props: {
         btnText: String
     },
+
+    methods: {
+        onClick() {
+            this.$emit("btn-click");
+        }
+    }
 }
 
 </script>
