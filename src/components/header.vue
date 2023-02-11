@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "Header",
+    name: "header",
     props: {
         title: String,
         subtitle: String
@@ -22,7 +22,8 @@ export default {
 <style>
 .top {
     background-color: lightgreen;
-    padding: 2rem 0;    
+    padding: 2rem 0;
+    height: 10%;  
 }
 .title {
     color: black;
